@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Календарь на каждый день</string>
+    <string name="app_name">Схема сборки календаря</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="privacy_policy_url">https://raw.githubusercontent.com/voseldop/calendar/main/PrivacyPolicy.md</string>
 </resources>

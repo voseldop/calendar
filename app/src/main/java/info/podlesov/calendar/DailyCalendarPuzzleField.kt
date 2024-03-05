@@ -9,7 +9,6 @@ class DailyCalendarPuzzleField: CalendarPuzzleField {
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
         field[month%6][month/6] = 9;
-        field[(day%7) - 1][2+day/7] = 9;
-
+        field[(day-1)%7][2+(day-1)/7] = 9;
     }
 }
