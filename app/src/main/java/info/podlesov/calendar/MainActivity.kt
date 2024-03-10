@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
             tableView.visibility = View.VISIBLE
             val progressBar = findViewById<ProgressBar>(R.id.progressBar);
             progressBar.visibility = View.GONE
-            val colors = listOf(Color.RED, Color.rgb(255, 165, 0), Color.YELLOW, Color.GREEN, Color.CYAN, Color.BLUE, Color.MAGENTA, Color.LTGRAY, Color.WHITE)
+            val colors = listOf(Color.RED, Color.rgb(255, 165, 0), Color.YELLOW, Color.GREEN, Color.CYAN, Color.BLUE, Color.MAGENTA, Color.LTGRAY, null)
 
             val field = result.getOrThrow().field.field;
             var tag = 0;
@@ -117,7 +117,11 @@ class MainActivity : AppCompatActivity() {
             for (x in 0..6) {
                 for (y in 0..6) {
                     val view = tableView.findViewWithTag<TextView>(y*7+x)
-                    view?.setBackgroundColor(colors.get(field[x][y].toInt() - 1))
+                    view?.apply{
+                        colors.get(field[x][y].toInt() - 1)?.let {
+                            setBackgroundColor(it)
+                        }
+                    }
                 }
             }
         }
